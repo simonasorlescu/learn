@@ -1,3 +1,4 @@
+// Check if a string is a palindrome
 function palindrome(str) {
 
     // Remove all non-alphanumeric characters
