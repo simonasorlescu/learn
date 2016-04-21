@@ -7,23 +7,16 @@
 
 function whereAreYou(collection, source) {
 
-    var arr = collection.filter(function(obj) {
-        var keys = Object.keys(source),
-            hasKey,
-            ownProps = 0;
+    return collection.filter(function(obj) {
+        // Create array of source keys
+        var keys = Object.keys(source);
 
-        for (var i = 0; i < keys.length; i++) {
-            if (obj.hasOwnProperty(keys[i]) && obj[keys[i]] === source[keys[i]]) {
-                ownProps++;
-            }
-        }
+        // Return array of objects that match every element in "keys"
+        return keys.every(function(value) {
+            return obj[value] === source[value];
+        });
 
-        if (ownProps === keys.length) {
-            return obj;
-        }
     });
-
-    return arr;
 }
 
 whereAreYou([{ "a": 1, "b": 2 }, { "a": 1 }, { "a": 1, "b": 2, "c": 2 }], { "a": 1, "b": 2 });

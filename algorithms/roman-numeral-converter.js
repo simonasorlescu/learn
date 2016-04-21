@@ -12,24 +12,25 @@ function convertToRoman(num) {
 		len2 = len-i-1;
 
 		switch(digit) {
-		case 1:
-		case 2:
-		case 3:
-		converted.push(romans[len2][0].repeat(digit));
-		break;
-		case 4:
-		converted.push(romans[len2][0] + romans[len2][1]);
-		break;
-		case 5:
-		converted.push(romans[len2][1]);
-		break;
-		case 6:
-		case 7:
-		case 8:
-		converted.push(romans[len2][1] + romans[len2][0].repeat(Math.abs(5-digit)));
-		break;
-		case 9:
-		converted.push(romans[len2][0] + romans[len2][2]);
+			case 1:
+			case 2:
+			case 3:
+				converted.push(romans[len2][0].repeat(digit));
+				break;
+			case 4:
+				converted.push(romans[len2][0] + romans[len2][1]);
+				break;
+			case 5:
+				converted.push(romans[len2][1]);
+				break;
+			case 6:
+			case 7:
+			case 8:
+				converted.push(romans[len2][1] + romans[len2][0].repeat(Math.abs(5-digit)));
+				break;
+			case 9:
+				converted.push(romans[len2][0] + romans[len2][2]);
+				break;
 		}
 	}
 
