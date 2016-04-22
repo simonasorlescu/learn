@@ -4,12 +4,10 @@
     but the final array should not be sorted in numerical order.
 */
 
-function uniteUnique(arr1, arr2, arr3) {
-    var args = Array.from(arguments),
-        arr = [];
+function uniteUnique() {
 
     // Concatenate arrays
-    var arr = args.reduce(function(prev, curr) {
+    var arr = Array.from(arguments).reduce(function(prev, curr) {
         return prev.concat(curr);
     });
 
@@ -19,4 +17,4 @@ function uniteUnique(arr1, arr2, arr3) {
     });
 }
 
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8]);
